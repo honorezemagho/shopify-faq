@@ -1,0 +1,50 @@
+      
+
+   {%for block in section.blocks%}
+	<div class="faq faq">
+     <div class="faq tab">
+          <input type="checkbox" id="tab{{forloop.index}}" class="faq tab-toggle">
+                <label for="tab{{forloop.index}}" class="faq tab-label">
+                    {{block.settings.question}}
+                </label>
+     <div class="faq tab-content">
+         {{block.settings.answer}}
+     </div>
+       {%endfor%}
+  </div>
+
+ <link type="text/css" href="{{ 'faq.css' | asset_url }}" rel="stylesheet">  
+     
+   </style>
+{% schema %}
+   
+   {
+    "name": "FAQ-QUESTION",
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Question/Answer",
+        "settings": [
+         {
+        "id": "question",
+        "type": "text",
+        "label": "Question",
+        "default": "Add Question Here"
+      },
+      {
+        "id": "answer",
+        "type": "richtext",
+        "label": "The Answer",
+        "default": "<p>Add your answer here</p>"
+      }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
