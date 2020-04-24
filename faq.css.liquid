@@ -1,0 +1,41 @@
+
+.faq .tab {
+    border-radius: 8px;
+    overflow: hidden;
+	color: white;
+}
+
+.faq .tab-toggle {
+    display: none;
+}
+
+.faq .tab-label {
+    background-color: rgb(69, 133, 212);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-weight: bold;
+    color: black,
+}
+
+.faq .tab-label:after {
+    content: '\276F';
+    transition: all .4s;
+}
+
+.faq .tab-content {
+    background-color: white;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all .4s;
+    padding: 0 1rem;
+	color: black;
+}
+
+.faq .tab-toggle:checked~.tab-label::after {
+    transform: rotate(90deg);
+}
+
+.faq .tab-toggle:checked~.tab-content {
+    max-height: 100vh;
+}
